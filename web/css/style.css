@@ -1,0 +1,255 @@
+ /*общие стили*/
+ *{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+html{
+
+}
+body{
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+
+}
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.container {
+  width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 30px;
+  padding-right: 30px;margin: 0 auto;
+}
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.column{
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  float: left;
+}
+.column1{ width: 8.33%; } 
+.column2{ width: 16.66%; } 
+.column3{ width: 25%; } 
+.column4{ width: 33.33%; } 
+.column5{ width: 41.66%; } 
+.column6{ width: 50%; } 
+.column7{ width: 58.33%; } 
+.column8{ width: 66.66%; } 
+.column9{ width: 75%; } 
+.column10{ width: 83.11%; } 
+.column11{ width: 91.66%; } 
+.column4:nth-of-type(3n+1){
+	clear: both;
+}
+a{ text-decoration: none;}
+li{ list-style-type: none;}
+p{font-size: 16px;}
+h1,h2,h3{
+	font-weight: normal;
+	
+}
+h2{
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+/*header*/
+header{
+	background-color: #434343;
+	width: 100%;
+	margin-bottom: 30px;
+}
+nav,.logo{
+	float: left;
+}
+nav li,nav li a,.btn-basket {
+	display: inline-block;
+}
+
+nav li a{
+	padding: 15px 15px;
+	color: #fff;
+}
+nav li a:hover{
+	background-color: #fff;
+	color: #000;
+}
+.logo{
+	padding: 15px;
+	color:#fff;
+	background-color: #3d85c6;
+
+}
+
+
+/*главная страница*/
+.banner{
+	background-image: url("../img/banner.jpeg");
+	-webkit-background-size: 100%;
+	background-size: 100%;
+	background-position: 0px;
+	width: 100%;
+	height: 300px;
+	margin-bottom: 30px;
+}
+/*боковое меню*/
+aside a{
+	display: block;
+	color: #0ea7c9;
+	padding: 10px 0;
+	font-size: 16px;
+	font-weight: bold;
+}
+.item-block {
+	margin-bottom: 40px;
+}
+.item-block img{
+	width: 200px;
+	margin-bottom: 10px;
+}
+.btn-basket{
+	background-color: #8bab42;
+	color: #fff;
+	padding: 10px 27px;
+	font-weight: bold;
+}
+/*страница каталога*/
+/*хлебные крошки*/
+.breadcrumbs{
+	margin-bottom: 20px;
+}
+.breadcrumbs a,.breadcrumbs p{
+	display: inline-block;
+}
+.breadcrumbs a{
+	
+	position: relative;
+	border-bottom: 1px solid #666;
+	font-size: 16px;
+	color: #666;
+}
+.breadcrumbs p:before{
+	content: "/";
+	position: absolute;
+	left: -10px;
+	bottom: 0;
+	font-size: 16px;
+	font-weight: normal;
+}
+.breadcrumbs p{
+	margin-left: 20px;
+	font-size: 20px;
+	color: #000;position: relative;
+}
+.breadcrumbs a:nth-of-type(n+2){
+	position: relative;	
+	margin-left: 15px;
+}
+.breadcrumbs a:nth-of-type(n+2):before{
+	content: "/";
+	position: absolute;
+	left: -10px;
+	top: 0;
+}
+
+/*страница товара*/
+main,section{
+	overflow: hidden;
+	margin-bottom: 100px;
+	height: 100%;
+}
+.order-status .row{
+	background-color: #d0e0e3;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 0 0 20px;
+}
+.order-status p{
+	float: left;
+	padding: 5px;
+	color: #0ea7c9;
+}
+.order-status-btn-basket{
+	float: right;
+	background-color: #8bab42;
+	padding: 5px 15px;
+	color: #fff;
+	border-radius: 5px;
+}
+.item-heading{
+	margin-bottom: 15px;
+}
+.item-heading h1{
+	margin: 0;
+	float: left;
+	font-size: 20px;
+	font-weight: normal;
+}
+.item-heading p{
+	float: right;
+}
+.item-breadcrumbs{
+	border-radius: 5px;
+	background-color: #efefef;
+	display: inline-block;
+	padding: 5px 10px;
+}
+.price{
+	text-align: right;
+	font-weight: bold;
+	font-size: 22px;
+}
+.item-gallery>img{
+	width: 100%;
+	margin-bottom: 10px;
+}
+.small-images img{
+	width: 78px;
+	margin-right: 5px;
+}
+.item-description{
+	color: #666;
+	margin-bottom: 25px;
+}
+.grey-bold{
+	font-weight: bold;
+}
+.order-btns{
+	margin-top: 25px;
+}
+.btn-click{
+	display: inline-block;
+	padding: 10px 26px;
+	background-color: #3d85c6;
+	color: #fff;
+	font-weight: bold;
+}
+
+/*footer*/
+footer{
+	position:fixed;
+	bottom: 0;
+	background-color: #434343;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	padding: 20px 0;
+}

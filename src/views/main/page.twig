@@ -1,0 +1,17 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+	<div class="catalog">
+		<div class="row clearfix">
+		<!-- элементы каталога -->
+			{% for product in products %}
+				<div class="item-block column column4">
+					<a href="{{ path('show_product', {id: product.id}) }}" class="item">
+						<img src="img/item.jpeg" alt="уточка">
+					</a>			
+				<a href="" class="btn-basket">В Корзину</a>
+				</div>
+			{% endfor%}
+		</div>
+	</div>
+{% endblock %}
