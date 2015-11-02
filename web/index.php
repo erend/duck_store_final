@@ -2,26 +2,23 @@
 
 require_once __DIR__.'/../vendor/autoload.php'; 
 
+require_once __DIR__.'/../src/autoload.php'; 
+
+use App\DB;
+
+session_start();
+
 $app = new Silex\Application(); 
 $app['debug'] = true;
 
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/../src/views',
-));
+require_once __DIR__.'/../src/App/Silex_init/init.php'; 
 
-$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+$Connection = new DB\Connection();
+$ProductRepository = new DB\ProductRepository($Connection);
+$CatalogRepository = new DB\CatalogRepository($Connection);
+//$UserRepository = new DB\UserRepository($Connection);
+//$OrderRepository = new DB\OrderRepository($Connection);
 
-$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
-    'db.options' => array(
-        'driver'   => 'pdo_mysql',
-        'dbname' => 'duck_store_final',
-        'host' => 'localhost',
-        'user' => 'root',
-        'password' => '',
-        'charset' => 'utf8'
-    ),
-));
-
-include_once __DIR__.'/../src/App/Router/router.php';
+require_once __DIR__.'/../src/App/Router/router.php';
 
 $app->run(); 
