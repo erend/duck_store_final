@@ -17,5 +17,11 @@ $app->get('/category/{id}', function($id) use($app, $CatalogRepository) {
 	return $page->page($id);	
 })->bind('show_category');
 
+$app->get('/header', function () use($app) {
+	   return $this->app['twig']->render('header/header.twig', [
+			'a' => 'abc'
+			]);
+})->bind('header');
+
 
 
