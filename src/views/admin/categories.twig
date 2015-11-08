@@ -1,0 +1,26 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+
+	<h3>Категории</h3><br>
+
+	<a href="/admin_categories/add" class="btn-basket">Добавить категорию</a><br><br>
+
+	<table border='1'>
+    <tr class="top_row">
+        <td>id</td>
+        <td>Название</td>
+        <td></td>
+        <td></td>
+    </tr>
+	{% for category in categories %}
+	    <tr >
+	        <td>{{ category.id}}</td>
+	        <td>{{ category.title}}</td>
+	        <td><a href="/admin_categories/edit/{{ category.id }}" class="color:blue">Редактировать</a></td>
+	        <td><a href="/admin_categories/delete/{{ category.id }}" class="color:red">Удалить</a></td>
+	    </tr>
+	{% endfor %}
+</table>
+
+{% endblock %}

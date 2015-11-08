@@ -1,0 +1,15 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+
+<h3>Добавление продукта</h3><br>
+
+<form action="/admin_products/add" method="post">
+    Название: <input type="text" name="title" value=""><br>
+    Описание: <textarea name="description" rows="5" cols="50"></textarea><br>
+    Цена: <input type="text" name="price" value=""><br>
+    id категории: <input type="text" name="category_id" value=""><br />
+    <input type="submit" value="Сохранить" />
+</form>
+
+{% endblock %}

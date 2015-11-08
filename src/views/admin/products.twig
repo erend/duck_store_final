@@ -1,0 +1,32 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+
+	<h3>Продукты</h3><br>
+
+	<a href="/admin_products/add" class="btn-basket">Добавить продукт</a><br><br>
+
+	<table border='1'>
+    <tr class="top_row">
+        <td>id</td>
+        <td>Название</td>
+        <td>Описание</td>
+        <td>Цена</td>
+        <td>id категории</td>
+        <td></td>
+        <td></td>
+    </tr>
+	{% for product in products %}
+	    <tr >
+	        <td>{{ product.id}}</td>
+	        <td>{{ product.title}}</td>
+	        <td>{{ product.description}}</td>
+	        <td>{{ product.price}}</td>
+	        <td>{{ product.category_id}}</td>
+	        <td><a href="/admin_products/edit/{{ product.id }}" class="color:blue">Редактировать</a></td>
+	        <td><a href="/admin_products/delete/{{ product.id }}" class="color:red">Удалить</a></td>
+	    </tr>
+	{% endfor %}
+</table>
+
+{% endblock %}

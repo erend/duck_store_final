@@ -16,8 +16,8 @@ require_once __DIR__.'/../src/App/Silex_init/init.php';
 $Connection = new DB\Connection();
 $ProductRepository = new DB\ProductRepository($Connection);
 $CatalogRepository = new DB\CatalogRepository($Connection);
-//$UserRepository = new DB\UserRepository($Connection);
-//$OrderRepository = new DB\OrderRepository($Connection);
+$UserRepository = new DB\UserRepository($Connection);
+$OrderRepository = new DB\OrderRepository($Connection);
 
 require_once __DIR__.'/../src/App/Router/router.php';
 

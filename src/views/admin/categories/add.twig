@@ -1,0 +1,12 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+
+<h3>Добавление категории</h3><br>
+
+<form action="/admin_categories/add" method="post">
+    Название: <input type="text" name="title" value=""><br>
+    <input type="submit" value="Сохранить" />
+</form>
+
+{% endblock %}

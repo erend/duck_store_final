@@ -1,0 +1,19 @@
+<aside class="column column3">
+	<h2>Каталог</h2>
+	<ul>
+		{% for name in names %}
+			<li>
+				<a 
+					{% if now == name.id %}
+						style="color:red"
+					{% else %}
+					{% for key in category|keys %}
+						{% if key == name.id %}
+							style="color:#0033FF"
+						{% endif %}
+					{% endfor %}
+					{% endif %}
+					href="{{ path('show_category', {id: name.id}) }}">{{ name.title }}</a></li>
+		{% endfor %}
+	</ul>
+</aside>

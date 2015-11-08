@@ -25,7 +25,7 @@ class ProductRepository
 
 	public function getProduct($id) {
 	    $stmt = $this->connection->prepare(
-          "SELECT p.id, p.title, p.description, p.price, c.title AS c_title, i.img_path AS img_path
+          "SELECT p.id, p.title, p.description, p.price, p.category_id, c.title AS c_title, i.img_path AS img_path
               FROM `products` AS p
               INNER JOIN `categories` AS c
                   ON p.`category_id` = c.`id`
@@ -37,6 +37,46 @@ class ProductRepository
 		$stmt->execute();	
 		$product = $stmt->fetch(\PDO::FETCH_ASSOC);
 		return($product);
+	}
+
+		public function getProductsAdmin()
+	{
+		$stmt = $this->connection->prepare(
+			"SELECT * FROM `products`"
+		);
+		$stmt->execute();
+		return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+	}
+
+	public function changeProduct($changes)
+	{
+		$stmt = $this->connection->prepare(
+			"UPDATE `products` 
+			SET  `title` = :title,
+				 `description` = :description,
+				 `price` = :price,
+				 `category_id` = :category_id
+			WHERE `id` = :id"
+		);
+		$stmt->execute($changes);
+	}
+
+		public function deleteProduct($id)
+	{
+		$stmt = $this->connection->prepare(
+			"DELETE FROM `products` WHERE id = :id"
+		);
+		$stmt->bindParam(":id", $id);
+		$stmt->execute($changes);
+	}
+
+	public function addProduct($product)
+	{
+		$stmt = $this->connection->prepare(
+			"INSERT INTO `products` (`title`, `description`, `price`, `category_id`)
+			 VALUES (:title, :description, :price, :category_id)"
+		);
+		$stmt->execute($product);
 	}
 
 }

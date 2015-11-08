@@ -3,26 +3,17 @@
 <head>
   	<meta charset="UTF-8">
   	<title>Yellow Duck</title>
-  	<link href="/css/normalize.css" rel="stylesheet">
-  	<link href="/css/style.css" rel="stylesheet">
+  	<link href="/css/normalize.css" rel="stylesheet"> {# исправить путь! #}
+  	<link href="/css/style.css" rel="stylesheet"> {# исправить путь! #}
 </head>
 <body>
 {{ render(url('header')) }}
-<main>
+<main> 
 	<div class="container">
 		<div class="banner"></div>
 		<div class="row clearfix">
 			<!-- боковое меню -->
-			<aside class="column column3">
-				<h2>Каталог</h2>
-				<ul>
-					<li><a href="{{ path('show_category', {id: 1}) }}">Какие-то уточки</a></li>
-					<li><a href="{{ path('show_category', {id: 2}) }}">Утки с моторчиком</a></li>
-					<li><a href="{{ path('show_category', {id: 3}) }}">Подводные уточки</a></li>
-					<li><a href="{{ path('show_category', {id: 4}) }}">Уточки ручной работы</a></li>
-					<li><a href="{{ path('show_category', {id: 5}) }}">Говорящие уточки</a></li>
-				</ul>
-			</aside>
+			{{ render(url('side_menu')) }}
 			<div class="column column9">
 				{% block content %}{% endblock %}
 			</div>

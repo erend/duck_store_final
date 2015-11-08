@@ -1,0 +1,13 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+
+<h3>Изменение категории</h3><br>
+
+<form action="/admin_categories/edit" method="post">
+    id категории: {{ category.id }}<br>
+    Название: <input type="text" name="title" value="{{ category.title }}"><br>
+    <input type="submit" value="Сохранить" />
+</form>
+
+{% endblock %}

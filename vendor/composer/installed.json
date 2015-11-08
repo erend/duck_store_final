@@ -1041,17 +1041,17 @@
     },
     {
         "name": "symfony/twig-bridge",
-        "version": "v2.7.5",
-        "version_normalized": "2.7.5.0",
+        "version": "v2.7.6",
+        "version_normalized": "2.7.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/twig-bridge.git",
-            "reference": "bce37975610a46bde48dbf2f67f724401251d199"
+            "reference": "3dd44937b1e08af8c8f6b14850f4b9c4d1039c6f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/twig-bridge/zipball/bce37975610a46bde48dbf2f67f724401251d199",
-            "reference": "bce37975610a46bde48dbf2f67f724401251d199",
+            "url": "https://api.github.com/repos/symfony/twig-bridge/zipball/3dd44937b1e08af8c8f6b14850f4b9c4d1039c6f",
+            "reference": "3dd44937b1e08af8c8f6b14850f4b9c4d1039c6f",
             "shasum": ""
         },
         "require": {
@@ -1063,10 +1063,9 @@
             "symfony/console": "~2.7",
             "symfony/expression-language": "~2.4",
             "symfony/finder": "~2.3",
-            "symfony/form": "~2.7,>=2.7.2",
+            "symfony/form": "~2.7,>=2.7.6",
             "symfony/http-kernel": "~2.3",
             "symfony/intl": "~2.3",
-            "symfony/phpunit-bridge": "~2.7",
             "symfony/routing": "~2.2",
             "symfony/security": "~2.6",
             "symfony/security-acl": "~2.6",
@@ -1090,7 +1089,7 @@
             "symfony/var-dumper": "For using the DumpExtension",
             "symfony/yaml": "For using the YamlExtension"
         },
-        "time": "2015-09-23 09:17:11",
+        "time": "2015-10-11 09:39:48",
         "type": "symfony-bridge",
         "extra": {
             "branch-alias": {

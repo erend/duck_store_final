@@ -1,0 +1,16 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+
+<h3>Изменение продукта</h3><br>
+
+<form action="/admin_products/edit" method="post">
+    id записи: {{ product.id }}<br>
+    Название: <input type="text" name="title" value="{{ product.title }}"><br>
+    Описание: <textarea name="description" rows="5" cols="50">{{ product.description }}</textarea><br>
+    Цена: <input type="text" name="price" value="{{ product.price }}"><br>
+    id категории: <input type="text" name="category_id" value="{{ product.category_id }}"><br />
+    <input type="submit" value="Сохранить" />
+</form>
+
+{% endblock %}

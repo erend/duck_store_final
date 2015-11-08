@@ -1,0 +1,16 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+
+	<h3>Вход в систему</h3><br>
+	{% if state == 'error'%}
+		<p style="color:red">Неправильное имя пользвоателя или пароль. Попробуйте снова.</p><br>
+	{% endif %}
+
+	<form action="{{ path('login_post') }}" method="post">
+	    Имя пользователя: <input type="text" name="username"/><br>
+	    Пароль: <input type="text" name="password"/><br>
+	    <input type="submit" value="Войти" />
+	</form>
+
+{% endblock %}

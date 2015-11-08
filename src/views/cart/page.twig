@@ -1,0 +1,28 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+
+<div class="container">
+
+<h3>Корзина</h3><br>
+
+<table border="1">
+	<tr>
+		<td><b>Продукт</b></td>
+		<td><b>Количество</b></td>
+		<td><b>Цена</b></td>
+	</tr>
+	{% for item in products %}
+		<tr>
+			<td><b>{{ item.title }}</b></td>
+			<td><b>{{ item.quantity}}</b></td>
+			<td><b>{{ item.price }}</b></td>
+		</tr>
+	{% endfor %}
+	
+</table><br>
+<p>Сумма: {{ total }}</p><br>
+<a href="{{ path('order') }}" class="btn-basket">Оформить заказ</a>
+</div>
+
+{% endblock %}

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\DB\CatalogRepository;
 use Silex\Application;
+use App\Controller\Pager;
 
 class Catalog
 {
@@ -20,14 +21,21 @@ class Catalog
 	{
 		$products = $this->CatalogRepository->getProductsForCategory($categoryId);
 		$category_name = $this->CatalogRepository->getCategoryName($categoryId);
-		return $this->render($products, $category_name);
+		setcookie('category['.$categoryId.']', true, time() + 3600);          //это для подсветки посещенных в side_menu
+		setcookie('now', $categoryId, time() + 3600);
+        $pager = new Pager($products);
+        $page = $pager->paging(3); // количество элементов на странице
+
+		return $this->render($products, $category_name, $categoryId, $page);
 	}
 
-	protected function render($products, $category_name)
-	{
+	protected function render($products, $category_name, $categoryId, $page)
+	{ 
 	    return $this->app['twig']->render('catalog/page.twig', [
 			'products' => $products,
-			'category' => $category_name
+			'category' => $category_name,
+			'categoryId' => $categoryId,
+			'page' => $page
     	]);
 	}
 }
